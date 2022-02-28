@@ -23,6 +23,10 @@
 		DB87330927C373C500AF5C4E /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87330827C373C500AF5C4E /* SessionService.swift */; };
 		DB87330B27C378A000AF5C4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87330A27C378A000AF5C4E /* HomeViewController.swift */; };
 		DBAD8B3727CCCB8700516B26 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B3627CCCB8700516B26 /* Repository.swift */; };
+		DBAD8B3927CCCC8700516B26 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B3827CCCC8700516B26 /* RepositoryListViewModel.swift */; };
+		DBAD8B3B27CCCCA800516B26 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B3A27CCCCA800516B26 /* RepositoryViewModel.swift */; };
+		DBAD8B3F27CCD3F500516B26 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B3D27CCD3F500516B26 /* RepositoryTableViewCell.swift */; };
+		DBAD8B4027CCD3F500516B26 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBAD8B3E27CCD3F500516B26 /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		DB87330827C373C500AF5C4E /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		DB87330A27C378A000AF5C4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DBAD8B3627CCCB8700516B26 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		DBAD8B3827CCCC8700516B26 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
+		DBAD8B3A27CCCCA800516B26 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		DBAD8B3D27CCD3F500516B26 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		DBAD8B3E27CCD3F500516B26 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		E86D94DFAD2AE75CBE2654A6 /* Pods_MVVMCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +143,7 @@
 		DB8732CC27C3368F00AF5C4E /* MVVMCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD8B3C27CCD3D100516B26 /* View */,
 				DB87330327C371D500AF5C4E /* ViewController */,
 				DB87330227C371CA00AF5C4E /* ViewModel */,
 				DB87330127C371BF00AF5C4E /* Model */,
@@ -180,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				DB8732FF27C36E1200AF5C4E /* LoginViewModel.swift */,
+				DBAD8B3827CCCC8700516B26 /* RepositoryListViewModel.swift */,
+				DBAD8B3A27CCCCA800516B26 /* RepositoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -191,6 +202,15 @@
 				DB87330A27C378A000AF5C4E /* HomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DBAD8B3C27CCD3D100516B26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DBAD8B3D27CCD3F500516B26 /* RepositoryTableViewCell.swift */,
+				DBAD8B3E27CCD3F500516B26 /* RepositoryTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +322,7 @@
 				DB8732DA27C3369200AF5C4E /* LaunchScreen.storyboard in Resources */,
 				DB8732D727C3369200AF5C4E /* Assets.xcassets in Resources */,
 				DB8732D527C3368F00AF5C4E /* Main.storyboard in Resources */,
+				DBAD8B4027CCD3F500516B26 /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,12 +392,15 @@
 				DB87330027C36E1200AF5C4E /* LoginViewModel.swift in Sources */,
 				DB8732FE27C362A800AF5C4E /* AppCoordinator.swift in Sources */,
 				DB87330927C373C500AF5C4E /* SessionService.swift in Sources */,
+				DBAD8B3F27CCD3F500516B26 /* RepositoryTableViewCell.swift in Sources */,
 				DB87330B27C378A000AF5C4E /* HomeViewController.swift in Sources */,
 				DB8732D227C3368F00AF5C4E /* LoginViewController.swift in Sources */,
+				DBAD8B3927CCCC8700516B26 /* RepositoryListViewModel.swift in Sources */,
 				DB87330527C3720400AF5C4E /* SignInResponse.swift in Sources */,
 				DB8732CE27C3368F00AF5C4E /* AppDelegate.swift in Sources */,
 				DB87330727C3726900AF5C4E /* Authentication.swift in Sources */,
 				DBAD8B3727CCCB8700516B26 /* Repository.swift in Sources */,
+				DBAD8B3B27CCCCA800516B26 /* RepositoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
