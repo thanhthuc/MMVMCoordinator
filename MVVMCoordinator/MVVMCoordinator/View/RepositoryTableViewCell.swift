@@ -9,6 +9,13 @@ import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var starCountLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,4 +27,8 @@ class RepositoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    func setupCell(repository: RepositoryViewModel) {
+        
+    }
 }
