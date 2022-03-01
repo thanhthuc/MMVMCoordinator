@@ -35,6 +35,9 @@
 		DBAD8B4C27CCDD0A00516B26 /* RepoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBAD8B4A27CCDD0A00516B26 /* RepoListViewController.xib */; };
 		DBAD8B4E27CDC34100516B26 /* LanguageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B4D27CDC34100516B26 /* LanguageListViewModel.swift */; };
 		DBAD8B5127CDC5CE00516B26 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5027CDC5CE00516B26 /* GithubService.swift */; };
+		DBAD8B5327CE193F00516B26 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5227CE193F00516B26 /* BaseCoordinator.swift */; };
+		DBAD8B5527CE1BD000516B26 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5427CE1BD000516B26 /* SignInCoordinator.swift */; };
+		DBAD8B5827CE2B8400516B26 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5727CE2B8400516B26 /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		DBAD8B4A27CCDD0A00516B26 /* RepoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoListViewController.xib; sourceTree = "<group>"; };
 		DBAD8B4D27CDC34100516B26 /* LanguageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewModel.swift; sourceTree = "<group>"; };
 		DBAD8B5027CDC5CE00516B26 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		DBAD8B5227CE193F00516B26 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		DBAD8B5427CE1BD000516B26 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		DBAD8B5727CE2B8400516B26 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		E86D94DFAD2AE75CBE2654A6 /* Pods_MVVMCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,13 +165,13 @@
 		DB8732CC27C3368F00AF5C4E /* MVVMCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD8B5627CE1BFC00516B26 /* Coordinator */,
 				DBAD8B4F27CDC5BC00516B26 /* Networking */,
 				DBAD8B3C27CCD3D100516B26 /* View */,
 				DB87330327C371D500AF5C4E /* ViewController */,
 				DB87330227C371CA00AF5C4E /* ViewModel */,
 				DB87330127C371BF00AF5C4E /* Model */,
 				DB8732CD27C3368F00AF5C4E /* AppDelegate.swift */,
-				DB8732FD27C362A800AF5C4E /* AppCoordinator.swift */,
 				DB8732D327C3368F00AF5C4E /* Main.storyboard */,
 				DB8732D627C3369200AF5C4E /* Assets.xcassets */,
 				DB8732D827C3369200AF5C4E /* LaunchScreen.storyboard */,
@@ -195,8 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				DB87330427C3720400AF5C4E /* SignInResponse.swift */,
-				DB87330627C3726900AF5C4E /* Authentication.swift */,
-				DB87330827C373C500AF5C4E /* SessionService.swift */,
 				DBAD8B3627CCCB8700516B26 /* Repository.swift */,
 			);
 			path = Model;
@@ -240,9 +244,22 @@
 		DBAD8B4F27CDC5BC00516B26 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DB87330627C3726900AF5C4E /* Authentication.swift */,
+				DB87330827C373C500AF5C4E /* SessionService.swift */,
 				DBAD8B5027CDC5CE00516B26 /* GithubService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		DBAD8B5627CE1BFC00516B26 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DBAD8B5227CE193F00516B26 /* BaseCoordinator.swift */,
+				DBAD8B5427CE1BD000516B26 /* SignInCoordinator.swift */,
+				DB8732FD27C362A800AF5C4E /* AppCoordinator.swift */,
+				DBAD8B5727CE2B8400516B26 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAD8B4727CCDCCE00516B26 /* LanguageListViewController.swift in Sources */,
+				DBAD8B5327CE193F00516B26 /* BaseCoordinator.swift in Sources */,
 				DBAD8B5127CDC5CE00516B26 /* GithubService.swift in Sources */,
 				DB87330027C36E1200AF5C4E /* LoginViewModel.swift in Sources */,
 				DBAD8B4E27CDC34100516B26 /* LanguageListViewModel.swift in Sources */,
@@ -439,6 +457,8 @@
 				DB8732CE27C3368F00AF5C4E /* AppDelegate.swift in Sources */,
 				DB87330727C3726900AF5C4E /* Authentication.swift in Sources */,
 				DBAD8B3727CCCB8700516B26 /* Repository.swift in Sources */,
+				DBAD8B5527CE1BD000516B26 /* SignInCoordinator.swift in Sources */,
+				DBAD8B5827CE2B8400516B26 /* HomeCoordinator.swift in Sources */,
 				DBAD8B3B27CCCCA800516B26 /* RepositoryViewModel.swift in Sources */,
 				DBAD8B4327CCDC6500516B26 /* LanguageListTableViewCell.swift in Sources */,
 			);
