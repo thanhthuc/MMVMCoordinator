@@ -109,9 +109,19 @@ class RepoListViewController: UIViewController {
             self.present(navigationController, animated: true, completion: nil)
         }).disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(RepositoryViewModel.self)
-            .bind(to: viewModel.selectRepository)
-            .disposed(by: disposeBag)
+//        tableView.rx.modelSelected(RepositoryViewModel.self)
+//            .bind(to: viewModel.selectRepository)
+//            .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(RepositoryViewModel.self).subscribe(onNext: { [weak self] repoViewModel in
+            guard let `self` = self else { return }
+            self.showRepository(by: repoViewModel.url, in: self.navigationController ?? UINavigationController())
+        }).disposed(by: disposeBag)
+    }
+    
+    private func showRepository(by url: URL, in navigationController: UINavigationController) {
+        let safariViewController = SFSafariViewController(url: url)
+        navigationController.pushViewController(safariViewController, animated: true)
     }
     
     private func presentAlert(message: String) {
