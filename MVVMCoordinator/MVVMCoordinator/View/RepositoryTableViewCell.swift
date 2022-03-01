@@ -15,7 +15,6 @@ class RepositoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var starCountLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,12 +22,13 @@ class RepositoryTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     
     func setupCell(repository: RepositoryViewModel) {
-        
+        nameLabel.text = repository.name
+        descriptionLabel.text = repository.description
+        starCountLabel.text = repository.starCountText
     }
 }

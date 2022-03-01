@@ -20,4 +20,9 @@ class LanguageListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupTitle(language: String) {
+        textLabel?.text = language
+        selectionStyle = .none
+    }
+    
 }

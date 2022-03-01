@@ -16,4 +16,10 @@ class HomeViewController: UIViewController {
         
     }
 
+    @IBAction func gotoGithubAction(_ sender: Any) {
+        let repoListViewController = RepoListViewController()
+        navigationController?.pushViewController(repoListViewController, animated: true)
+    }
+    
+    
 }
