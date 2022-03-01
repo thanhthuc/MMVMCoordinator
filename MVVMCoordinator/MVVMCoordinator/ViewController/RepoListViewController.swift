@@ -81,13 +81,15 @@ class RepoListViewController: UIViewController {
         refreshControl.rx.controlEvent(.valueChanged)
             .bind(to: viewModel.reload)
             .disposed(by: disposeBag)
-
+        
 //        chooseLanguageButton.rx.tap
 //            .bind(to: viewModel.chooseLanguage)
 //            .disposed(by: disposeBag)
         
         chooseLanguageButton.rx.tap.subscribe(onNext: { [weak self] in
+            
             guard let `self` = self else { return }
+            
             let languageListViewController = LanguageListViewController()
             
             let navigationController = UINavigationController(rootViewController: languageListViewController)
@@ -95,8 +97,12 @@ class RepoListViewController: UIViewController {
             languageListViewController
                 .viewModel
                 .didSelectLanguage
-                .subscribe(onNext: { language in
-                    print("Did select language")
+                .subscribe(onNext: {[weak self] language in
+                    
+                    print("Did select language: \(language)")
+                    self?.viewModel.setCurrentLanguage.onNext(language)
+                    languageListViewController.dismiss(animated: true, completion: nil)
+                    // self?.viewModel.reload.onNext(())
                     
                 }).disposed(by: self.disposeBag)
             

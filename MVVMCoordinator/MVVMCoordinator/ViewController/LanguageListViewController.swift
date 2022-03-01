@@ -14,7 +14,7 @@ class LanguageListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: LanguageListViewModelType!
+    var viewModel: LanguageListViewModelType! = LanguageListViewModel()
     
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
     
@@ -31,7 +31,7 @@ class LanguageListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel = LanguageListViewModel()
+//        viewModel = LanguageListViewModel()
         
         setupUI()
         setupBindings()
