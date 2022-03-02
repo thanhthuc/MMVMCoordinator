@@ -47,8 +47,7 @@ class BaseCoordinator: Coordinator {
     }
     
     /// In case have child coordinators:
-    /// after finish job, need to remove all
-    /// child coordinator completely from memory
+    /// after finish job, need to remove all child coordinator completely from memory
     func didFinish(coordinator: Coordinator) {
         if let index = childCoordinators.firstIndex(where: {$0 === coordinator}) {
             childCoordinators.remove(at: index)

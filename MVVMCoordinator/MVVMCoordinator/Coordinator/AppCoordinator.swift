@@ -32,9 +32,8 @@ extension AppCoordinator: SignInListener {
     func didSignIn() {
         // Go to Dashboard
         // Init home view controller
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = sb.instantiateViewController(withIdentifier: String(describing: HomeViewController.self)) as! HomeViewController
-        navigationController.viewControllers = [homeVC]
+        let homeCoordinator = HomeCoordinator(navigationController: navigationController)
+        homeCoordinator.start()
     }
 }
 

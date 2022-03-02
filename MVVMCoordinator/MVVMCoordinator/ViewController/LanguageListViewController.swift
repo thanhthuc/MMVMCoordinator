@@ -14,13 +14,14 @@ class LanguageListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: LanguageListViewModelType! = LanguageListViewModel()
+    private var viewModel: LanguageListViewModelType
     
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
     
     private let disposeBag = DisposeBag()
     
-    init() {
+    init(viewModel: LanguageListViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: String(describing: LanguageListViewController.self), bundle: nil)
     }
     
@@ -51,9 +52,7 @@ class LanguageListViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: String(describing: LanguageListTableViewCell.self),
                                          cellType: LanguageListTableViewCell.self)) {
                 (_, language, cell) in
-                
                 cell.setupTitle(language: language)
-                
             }
             .disposed(by: disposeBag)
         
@@ -62,8 +61,9 @@ class LanguageListViewController: UIViewController {
             .bind(to: viewModel.selectLanguage)
             .disposed(by: disposeBag)
         
-        cancelButton.rx.tap.subscribe(onNext: {[weak self] in
-            self?.dismiss(animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+        cancelButton.rx
+            .tap
+            .bind(to: viewModel.cancel)
+            .disposed(by: disposeBag)
     }
 }

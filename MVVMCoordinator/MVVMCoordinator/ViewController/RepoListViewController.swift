@@ -21,7 +21,8 @@ class RepoListViewController: UIViewController {
     private let chooseLanguageButton = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
     private let disposeBag = DisposeBag()
     
-    init() {
+    init(viewModel: RepositoryListViewModelType) {
+        self.viewModel = viewModel
         super.init(nibName: String(describing: RepoListViewController.self), bundle: nil)
     }
     
@@ -32,16 +33,11 @@ class RepoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel = RepositoryListViewModel(initialLanguage: "Swift")
-        
         // Binding
         setupBinding()
         // Setup table view
         setupUI()
-        
         refreshControl.sendActions(for: .valueChanged)
-        
-        
     }
     
     private func setupUI() {
@@ -77,41 +73,14 @@ class RepoListViewController: UIViewController {
             .disposed(by: disposeBag)
 
         // View Controller UI actions to the View Model
-
+        
         refreshControl.rx.controlEvent(.valueChanged)
             .bind(to: viewModel.reload)
             .disposed(by: disposeBag)
         
-//        chooseLanguageButton.rx.tap
-//            .bind(to: viewModel.chooseLanguage)
-//            .disposed(by: disposeBag)
-        
-        chooseLanguageButton.rx.tap.subscribe(onNext: { [weak self] in
-            
-            guard let `self` = self else { return }
-            
-            let languageListViewController = LanguageListViewController()
-            
-            let navigationController = UINavigationController(rootViewController: languageListViewController)
-            
-            languageListViewController
-                .viewModel
-                .didSelectLanguage
-                .subscribe(onNext: {[weak self] language in
-                    
-                    print("Did select language: \(language)")
-                    self?.viewModel.setCurrentLanguage.onNext(language)
-                    languageListViewController.dismiss(animated: true, completion: nil)
-                    // self?.viewModel.reload.onNext(())
-                    
-                }).disposed(by: self.disposeBag)
-            
-            self.present(navigationController, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
-
-//        tableView.rx.modelSelected(RepositoryViewModel.self)
-//            .bind(to: viewModel.selectRepository)
-//            .disposed(by: disposeBag)
+        chooseLanguageButton.rx.tap
+            .bind(to: viewModel.chooseLanguage)
+            .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(RepositoryViewModel.self).subscribe(onNext: { [weak self] repoViewModel in
             guard let `self` = self else { return }
