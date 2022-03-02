@@ -13,7 +13,17 @@ protocol HomeViewModelType {
     var gotoGithub: AnyObserver<Void> { get set }
 }
 
-class HomeViewModel: HomeViewModelType {
+class HomeViewModel: HomeViewModelType, BaseViewModelType {
+    
+    struct Input {
+        
+    }
+    
+    struct Output {
+        
+    }
+    
+    var disposeBag: DisposeBag = DisposeBag()
     
     var didGotoGithubRepoList: Observable<Void>
     
