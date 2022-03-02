@@ -12,22 +12,22 @@ import RxSwift
 
 protocol RepoListListener {
     func didFinishSelectLanguage(language: String)
+    func didTapPresentLanguageList()
 }
 
 class RepoListCoordinator: BaseCoordinator {
     
     private let disposeBag = DisposeBag()
     private var repoListViewModel: RepositoryListViewModelType!
+    private var repoListViewController: RepoListViewController!
     override func start() {
         repoListViewModel = RepositoryListViewModel(initialLanguage: "Swift")
-        let repoListViewController = RepoListViewController(viewModel: repoListViewModel)
+        repoListViewController = RepoListViewController(viewModel: repoListViewModel)
         
         repoListViewModel.showLanguageList.subscribe(onNext: { [weak self] in
             self?.showLanguageList()
         }).disposed(by: disposeBag)
-        
-        let navController = self.parentCoordinator?.navigationController
-        navController?.pushViewController(repoListViewController, animated: true)
+        navigationController.pushViewController(repoListViewController, animated: true)
     }
     
     func backToHome() {
@@ -43,5 +43,9 @@ class RepoListCoordinator: BaseCoordinator {
 extension RepoListCoordinator: RepoListListener {
     func didFinishSelectLanguage(language: String) {
         repoListViewModel.setCurrentLanguage.onNext(language)
+    }
+    
+    func didTapPresentLanguageList() {
+        
     }
 }

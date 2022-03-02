@@ -75,9 +75,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Go to the github"/>
-                                <connections>
-                                    <action selector="gotoGithubAction:" destination="sfh-a1-pKy" eventType="touchUpInside" id="5HA-Gg-P1G"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s3u-ul-fcY"/>
@@ -87,6 +84,9 @@
                             <constraint firstItem="CPY-hs-Pw5" firstAttribute="centerX" secondItem="wqJ-nH-PNL" secondAttribute="centerX" id="tLL-t5-p5t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gotoGithubButton" destination="CPY-hs-Pw5" id="VLS-rL-SAI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd6-dW-CUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

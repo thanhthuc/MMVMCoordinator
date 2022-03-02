@@ -33,7 +33,12 @@ extension AppCoordinator: SignInListener {
         // Go to Dashboard
         // Init home view controller
         let homeCoordinator = HomeCoordinator(navigationController: navigationController)
-        homeCoordinator.start()
+
+        /// Should not call start because it will break relationship of AppCoordinator and homeCoordinator
+        /// homeCoordinator.start()
+        /// Appcoordinator are keep reference to window root
+        /// 
+        start(coordinator: homeCoordinator)
     }
 }
 

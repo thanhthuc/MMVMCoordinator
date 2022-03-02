@@ -22,7 +22,6 @@ class LanguageListCoordinator: BaseCoordinator {
         viewModel.didSelectLanguage.subscribe(onNext: {
             [weak self] language in
             guard let `self` = self else { return }
-            
             languageListVC.dismiss(animated: true, completion: nil)
             self.parentCoordinator?.didFinish(coordinator: self)
             (self.parentCoordinator as? RepoListListener)?.didFinishSelectLanguage(language: language)
@@ -35,10 +34,8 @@ class LanguageListCoordinator: BaseCoordinator {
             languageListVC.dismiss(animated: true, completion: nil)
             self.parentCoordinator?.didFinish(coordinator: self)
         }).disposed(by: disposeBag)
-        
-        let navigation = UINavigationController(rootViewController: languageListVC)
-        
-        navigationController.present(navigation, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: languageListVC)
+        navigationController.present(nav, animated: true, completion: nil)
     }
     
 }

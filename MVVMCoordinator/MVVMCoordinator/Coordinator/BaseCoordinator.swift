@@ -25,7 +25,8 @@ class BaseCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     /// Coordinator may be have parent or not
-    var parentCoordinator: Coordinator?
+    /// weak to avoid memory leak
+    weak var parentCoordinator: Coordinator?
     
     /// inject a navigation in flow
     init(navigationController: UINavigationController) {
