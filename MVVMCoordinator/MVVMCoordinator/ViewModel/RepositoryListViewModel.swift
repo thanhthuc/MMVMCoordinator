@@ -39,9 +39,18 @@ protocol RepositoryListViewModelType {
 
     /// Emits when we should show language list.
     var showLanguageList: Observable<Void> { get set }
+    
+    var didDismiss: Observable<Void> { get set }
+    
+    var dismiss: AnyObserver<Void> { get set }
 }
 
 class RepositoryListViewModel: RepositoryListViewModelType {
+    
+    var didDismiss: Observable<Void>
+    
+    var dismiss: AnyObserver<Void>
+    
     /// Call to update current language. Causes reload of the repositories.
     var setCurrentLanguage: AnyObserver<String>
 
@@ -103,5 +112,9 @@ class RepositoryListViewModel: RepositoryListViewModelType {
         let _chooseLanguage = PublishSubject<Void>()
         self.chooseLanguage = _chooseLanguage.asObserver()
         self.showLanguageList = _chooseLanguage.asObservable()
+        
+        let _cancel = PublishSubject<Void>()
+        self.dismiss = _cancel.asObserver()
+        self.didDismiss = _cancel.asObserver()
     }
 }

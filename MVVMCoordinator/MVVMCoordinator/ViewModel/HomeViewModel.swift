@@ -20,12 +20,8 @@ class HomeViewModel: HomeViewModelType {
     var gotoGithub: AnyObserver<Void>
     
     init() {
-//        let _gotoGithub = PublishSubject<Void>()
-//        self.gotoGithub = _gotoGithub.asObserver()
-//        self.didGotoGithubRepoList = _gotoGithub.asObservable()
-        
-        let _cancel = PublishSubject<Void>()
-        self.gotoGithub = _cancel.asObserver()
-        self.didGotoGithubRepoList = _cancel.asObservable()
+        let _gotoGithub = PublishSubject<Void>()
+        self.gotoGithub = _gotoGithub.asObserver()
+        self.didGotoGithubRepoList = _gotoGithub.asObservable()
     }
 }

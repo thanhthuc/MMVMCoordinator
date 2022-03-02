@@ -40,6 +40,11 @@ class RepoListViewController: UIViewController {
         refreshControl.sendActions(for: .valueChanged)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.dismiss.onNext(())
+    }
+    
     private func setupUI() {
         navigationItem.rightBarButtonItem = chooseLanguageButton
         let nib = UINib(nibName: String(describing: RepositoryTableViewCell.self), bundle: nil)

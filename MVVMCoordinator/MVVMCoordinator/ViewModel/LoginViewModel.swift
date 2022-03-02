@@ -38,20 +38,17 @@ class LoginViewModel: LoginViewModelType {
     }
     
     func signInTapped() {
-        
         let _ = emailString.value
         let _ = passwordString.value
         
         // then sign in
         authenService.signIn().subscribe {[weak self] singInResponse in
-            
             // Success
             self?.signInSuccess.accept(())
             
         } onFailure: { [weak self] error in
             
             self?.signInFailure.accept(error)
-            
         } onDisposed: {
             
         }.disposed(by: disposeBag)

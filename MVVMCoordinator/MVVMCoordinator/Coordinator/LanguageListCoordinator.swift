@@ -21,10 +21,11 @@ class LanguageListCoordinator: BaseCoordinator {
         
         viewModel.didSelectLanguage.subscribe(onNext: {
             [weak self] language in
+            
             guard let `self` = self else { return }
             languageListVC.dismiss(animated: true, completion: nil)
-            self.parentCoordinator?.didFinish(coordinator: self)
             (self.parentCoordinator as? RepoListListener)?.didFinishSelectLanguage(language: language)
+            self.parentCoordinator?.didFinish(coordinator: self)
             
         }).disposed(by: disposeBag)
         

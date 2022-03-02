@@ -40,6 +40,7 @@
 		DBAD8B5827CE2B8400516B26 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5727CE2B8400516B26 /* HomeCoordinator.swift */; };
 		DBAD8B5A27CE453700516B26 /* RepoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5927CE453700516B26 /* RepoListCoordinator.swift */; };
 		DBAD8B5C27CE454900516B26 /* LanguageListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD8B5B27CE454900516B26 /* LanguageListCoordinator.swift */; };
+		DBBC245427CF6F5F0064CA2D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC245327CF6F5F0064CA2D /* BaseViewModel.swift */; };
 		DBBE7FF327CF48020022D8B4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBE7FF227CF48020022D8B4 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		DBAD8B5727CE2B8400516B26 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		DBAD8B5927CE453700516B26 /* RepoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCoordinator.swift; sourceTree = "<group>"; };
 		DBAD8B5B27CE454900516B26 /* LanguageListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListCoordinator.swift; sourceTree = "<group>"; };
+		DBBC245327CF6F5F0064CA2D /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		DBBE7FF227CF48020022D8B4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E86D94DFAD2AE75CBE2654A6 /* Pods_MVVMCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 				DBAD8B3827CCCC8700516B26 /* RepositoryListViewModel.swift */,
 				DBAD8B3A27CCCCA800516B26 /* RepositoryViewModel.swift */,
 				DB8732FF27C36E1200AF5C4E /* LoginViewModel.swift */,
+				DBBC245327CF6F5F0064CA2D /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				DBAD8B5127CDC5CE00516B26 /* GithubService.swift in Sources */,
 				DB87330027C36E1200AF5C4E /* LoginViewModel.swift in Sources */,
 				DBAD8B4E27CDC34100516B26 /* LanguageListViewModel.swift in Sources */,
+				DBBC245427CF6F5F0064CA2D /* BaseViewModel.swift in Sources */,
 				DBBE7FF327CF48020022D8B4 /* HomeViewModel.swift in Sources */,
 				DBAD8B5A27CE453700516B26 /* RepoListCoordinator.swift in Sources */,
 				DB8732FE27C362A800AF5C4E /* AppCoordinator.swift in Sources */,
